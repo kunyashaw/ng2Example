@@ -1,0 +1,15 @@
+
+<h2 routerLink="/demo05">Hello Demo03 </h2>
+<input type="text" [(ngModel)]="houseToSon.price"/>
+<h3>msg from son is :{{msgFromSon}}</h3>
+<h4>{{"content is "+demo.zhenxinhua}}</h4>
+<hr/>
+     <!--通过输入输出属性绑定的方式来实现数据双向流动。-->
+    <!--但父组件仅仅是将数据源流向下级子组件，它不具有读取子组件的相关成员变量和方法的权限-->
+    <!--在angular中的模板局部变量，可以帮助我们获取子组件的实例引用。即在组件中创建一个局部变量，那么父组件可以通过它获取子组件公共成员变量和函数的权限-->
+<demo04 
+#demo
+[house]=houseToSon
+[letter]=letterToSon 
+(funcShow)="setValue($event)">
+</demo04>

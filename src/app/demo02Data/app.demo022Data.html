@@ -1,0 +1,29 @@
+
+
+
+<button routerLink='/demo03'>跳转到demo03</button>
+
+<!--单向数据流动：从数据到视图-->
+<p>{{name}}</p>
+<div>
+    <p *ngIf="isMemeber">仅会员可见</p>
+</div>
+<ul>
+    <li *ngFor="let num of list">{{num}}</li>
+</ul>
+<p> phone is {{phone}}</p>
+
+<!--单向数据流动：从视图到数据（事件绑定）-->
+<button  (click)="print()">clickMe</button>
+
+<!--angular表单支持单向和双向数据绑定 表单的单向绑定使用[ngModel] 双向数据绑定使用[(ngModel)]-->
+<!--ngModel需要用FormsModule-->
+<input type="text" name="userName" [ngModel]="order.user_name">
+<p>{{order.user_name}}</p>
+
+<input type="text" name='userAddr' [(ngModel)]="order.user_addr">
+<p>{{order.user_addr}}</p>
+
+<input type="text" name="title" [(title)]="order.user_phone">
+<h2>{{'phone is '+order.user_phone}}</h2>
+<br>
