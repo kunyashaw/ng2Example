@@ -4,6 +4,7 @@ import { Routes, Router, RouterModule } from '@angular/router';
 import { demo01Component } from './demo01/app.demo01'
 import { Demo02DataComponent } from './demo02Data/app.demo02Data'
 import { Demo03Component } from './demo03/app.demo03'
+import { Demo07Component } from './demo07/demo07.component'
 import {Demo05Component} from './demo05_parent/demo05.component'
 
 // 。路由器使用先匹配者优先的策略来匹配路由，所以，具体路由应该放在通用路由的前面。
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'demo02', component: Demo02DataComponent },
     { path: 'demo03', component: Demo03Component },
     { path: 'demo05', component: Demo05Component },
+        { path: 'demo07', component: Demo07Component },
     { path: '', redirectTo: '/demo01', pathMatch: 'full' },
 ];
 
