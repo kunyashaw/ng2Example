@@ -1,0 +1,42 @@
+<form (ngSubmit)="submitOrder()" #myForm="ngForm">
+    <input type="text" name="userName" [(ngModel)]="order.userName" />
+    <br>
+    <!--单选-->
+    <input type="radio" name='sex' [(ngModel)]="order.userSex" value='male' />男
+    <input type="radio" name='sex' [(ngModel)]="order.userSex" value='female' />女
+    <br>
+
+    <!--复选框-->
+    <input type="checkbox" name='lock' [(ngModel)]="order.isRemember" />是否记住密码
+    <br>
+    <!--下拉框-->
+    选择喜欢的颜色
+    <select name="loveColor" [(ngModel)]="order.userColor">
+        <option *ngFor="let color of colorList" [value]=color>
+            {{color}}
+        </option>
+    </select>
+    <br> 选择喜欢的颜色(多选)
+    <select multiple name="loveMovie" [(ngModel)]="order.userMovie">
+        <option *ngFor="let movie of movieList" [value]=movie>
+            {{movie}}      
+        </option>
+    </select>
+
+
+    <!--表单状态属性
+    valid  有效
+    pristine 未改过
+    dirty 以改变
+    touched 已被访问过
+    untouched 未被访问过
+-->
+    <br> 输入手机号
+    <!--#myPhone="ngModel" 局部变量myPhone是对ngModel指令实例对象的引用-->
+    <input type="text" #myPhone="ngModel" name="userPhone" [(ngModel)]="order.userPhone" required>
+    <br>
+    <span>{{"dirty:"+myPhone.dirty+" valid is "+myPhone.valid}}</span>
+    <br>
+    <span *ngIf="myPhone.dirty && !myPhone.valid">请输入手机号</span>
+    <button type='submit' [disabled]="!myForm.valid">submit</button>
+</form>

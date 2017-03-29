@@ -1,0 +1,36 @@
+<div>
+    <!--常用管道-->
+    <!--1、DatePipe-->
+    <span>my birthday is {{birthday | date:'MM/dd/y'}}</span>
+    <!--2、JsonPipe 将json输入数据对象转换为对象字符串-->
+    <span>{{stu | json }}</span>
+    <!--3、uppercase/lowercase-->
+    <span>{{name|uppercase}}</span>
+    <span>{{name|lowercase}}</span>
+    <!--4、DecimalPipe 对数值的整数与小数按照指定规则进行格式化-->
+    <!--语法：expression | number[:digitInfo]-->
+    <!--参数digitInfo的格式如下 {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+    minIntegerDigits:整数部分保留最小的位数，默认值为1
+    minFractionDigits:小数部分保留最小的位数，默认值为0
+    maxFractionDigits:小数部分保留最大的位数，默认值为3
+    -->
+    <span>{{a | number:'3.4-5'}}</span>
+    <!--对a变量的数据做数据的格式化处理：小数点前的3意味着整数取三位，不够的填充0
+    小数点后的4-5意味着取小数点最小后4位，最大后5为-->
+    <span>{{price | currency }}</span>
+    <p>{{count | percent}}</p>
+
+
+    <!--纯管道 非纯管道
+    
+    纯管道：Angular只有在它检测到输入值发生了纯变更时才会执行纯管道。 纯变更是指对原始类型值(String、Number、Boolean、Symbol)的更改， 或者对对象引用(Date、Array、Function、Object)的更改。
+Angular会忽略(复合)对象内部的更改。 如果我们更改了输入日期(Date)中的月份、往一个输入数组(Array)中添加新值或者更新了一个输入对象(Object)的属性，Angular都不会调用纯管道。
+这可能看起来是一种限制，但它保证了速度。 对象引用的检查是非常快的(比递归的深检查要快得多)，所以Angular可以快速的决定是否应该跳过管道执行和视图更新。
+因此，如果我们要和变更检测策略打交道，就会更喜欢用纯管道。 如果不能，我们就可以转回到非纯管道。
+    
+    非纯管道
+    非纯管道：Angular会在每个组件的变更检测周期中执行非纯管道。 非纯管道可能会被调用很多次，和每个按键或每次鼠标移动一样频繁。
+要在脑子里绷着这根弦，我们必须小心翼翼的实现非纯管道。 一个昂贵、迟钝的管道将摧毁用户体验
+    -->
+    <h1>性别为:{{userSex | sex}}</h1>
+</div>

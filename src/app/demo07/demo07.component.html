@@ -1,4 +1,23 @@
 <div>
-    <h2 [ngClass]="{red:true}">Hello directive</h2>
-    <h3 [ngStyle]="'color': #ff0000"></h3>
+    <h2 [ngClass]="setClasses()">Hello directive</h2>
+    <p [ngStyle]="setStyles()">123</p>
+    <h2 *ngIf='flagMember'> memeber only </h2>
+    <h2 *ngIf='!flagMember'>not memeber </h2>
+
+    <div [ngSwitch]="contactName">
+        <span *ngSwitchCase="'jack'">杰克</span>
+        <span *ngSwitchCase="'michael'">麦克</span>
+        <span *ngSwitchDefault> defaultName </span>
+    </div>
+
+    <ul>
+        <li *ngFor="let item of list,let i=index">{{i+":"+item}}</li>
+    </ul>
+
+    <!--模版驱动 template-->
+
+
+    <!--模型驱动 model-->
+
+
 </div>
