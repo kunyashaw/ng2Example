@@ -1,0 +1,12 @@
+{
+    "list": [{
+        "name": "zhagsan",
+        "age": 20
+    }, {
+        "name": "lisi",
+        "age": 30
+    }, {
+        "name": "wanger",
+        "age": 33
+    }]
+}

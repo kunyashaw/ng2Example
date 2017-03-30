@@ -12,6 +12,7 @@ import { Demo07Component } from './demo07/demo07.component'
 import { Demo08PipeComponent } from './demo08/demo08.component'
 import { Demo09Component } from './demo09/demo09.component'
 import { Demo10Component } from './demo10/demo10.component'
+import { Demo11Component } from './demo11/demo11.component'
 import {CustomDirective} from './demo10/custom.directive'
 import {Custom2Directive} from './demo10/custom2.directive'
 import { SexPipe } from './demo08/custom.pipe'
@@ -19,9 +20,10 @@ import { HeaderComponent } from './head/head.component'
 import { Routes, RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app.route'
 import { HttpModule, JsonpModule } from '@angular/http';
+
 @NgModule({
   imports: [AppRoutingModule, BrowserModule, FormsModule, HttpModule],
-  declarations: [SexPipe,Custom2Directive, CustomDirective,Demo10Component, Demo09Component, AppComponent, Demo08PipeComponent, Demo07Component, demo01Component, Demo02DataComponent, Demo03Component, Demo04Component, Demo05Component, Demo06Component, HeaderComponent],
+  declarations: [SexPipe,Custom2Directive, CustomDirective,Demo11Component,Demo10Component, Demo09Component, AppComponent, Demo08PipeComponent, Demo07Component, demo01Component, Demo02DataComponent, Demo03Component, Demo04Component, Demo05Component, Demo06Component, HeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
